@@ -38,6 +38,7 @@
 }
 
 /*Searchbar*/
+
 .search-bar {
   display: flex;
   align-items: center;
@@ -57,6 +58,22 @@
 .search-bar .MuiInputBase-root:hover {
   background-color: #e0e0e0;
 }
+.recent-searches {
+  margin-top: 20px;
+  text-align: left;
+}
 
+.recent-searches h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
 
+.recent-searches ul {
+  list-style: none;
+  padding: 0;
+}
 
+.recent-searches li {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}

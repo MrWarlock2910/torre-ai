@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { TextField, IconButton, InputAdornment } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
@@ -8,26 +7,26 @@ const SearchBar = ({ onSearch }) => {
   const [query, setQuery] = useState('');
 
   const handleSearch = async () => {
-    console.log("helko")
     try {
       const response = await axios.post(
         'https://torre.ai/api/entities/_search',
         {
-          'query': query,
-          'identityType': 'person',
-          'meta': false,
-          'limit': 10,
-          'excludeContacts': true,
-          'excludedPeople': []
+          query,
+          identityType: 'person',
+          meta: false,
+          limit: 10,
+          excludeContacts: true,
+          excludedPeople: []
         },
         {
           headers: {
-            'accept': '*/*',
+            accept: '*/*',
             'Content-Type': 'application/json'
           }
         }
       );
-      onSearch(response.data);
+      onSearch(response.data, query); 
+      setQuery(''); 
     } catch (error) {
       console.error('Error fetching user data:', error);
     }
@@ -41,11 +40,7 @@ const SearchBar = ({ onSearch }) => {
         size="small"
         placeholder="Search people by name"
         value={query}
-        onChange={function (e) {
-          setQuery(e.target.value)
-          
-        } 
-      }
+        onChange={(e) => setQuery(e.target.value)}
         InputProps={{
           endAdornment: (
             <InputAdornment position="end">
