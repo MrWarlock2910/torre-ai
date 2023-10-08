@@ -77,3 +77,22 @@
   font-size: 1rem;
   margin-bottom: 5px;
 }
+.favorites {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.favorites h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.favorites ul {
+  list-style: none;
+  padding: 0;
+}
+
+.favorites li {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}

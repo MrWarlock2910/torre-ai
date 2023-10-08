@@ -3,7 +3,7 @@ import { TextField, IconButton, InputAdornment } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
 import axios from 'axios';
 
-const SearchBar = ({ onSearch }) => {
+const SearchBar = ({ onSearch, onAddToFavorites }) => {
   const [query, setQuery] = useState('');
 
   const handleSearch = async () => {
