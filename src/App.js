@@ -20,20 +20,28 @@ function App() {
     setFavorites((prevFavorites) => [...prevFavorites, user]);
   };
 
+  
   return (
     <div className="App">
       <header className="App-header">
         <h1>Torre AI Search</h1>
         <SearchBar onSearch={handleSearch} onAddToFavorites={addToFavorites} />
+        <div className='row'>
+
+        <div className='col-8'>
         <div className="search-results">
           {searchResults.map((user) => (
             <div key={user.username}>
-              <p><a href={`https://torre.ai/${user.username}`}>{user.name}</a></p>
-              <button onClick={() => addToFavorites(user)}>Add to Favorites</button>
+              <p style={{width: "250px", margin:"16px", borderRadius: "25px", backgroundColor:'white', boxShadow:"2px 2px solid", padding:"32px"}}>
+                <img className="img img-fluid" src={user.imageUrl}/>{console.log(user)}
+                <a href={`https://torre.ai/${user.username}`} target="_blank">{user.name}</a><button onClick={() => addToFavorites(user)}>Add to Favorites</button></p>
+              
             </div>
           ))}
         </div>
-        <div className="recent-searches">
+            </div>
+          <div className='col-2'>
+          <div className="recent-searches">
           <h2>Recent Searches</h2>
           <ul>
             {recentSearches.map((query, index) => (
@@ -45,10 +53,14 @@ function App() {
           <h2>Favorites</h2>
           <ul>
             {favorites.map((user) => (
-              <li key={user.username}><a href={`https://torre.ai/${user.username}`}>{user.name}</a></li>
+              <li key={user.username}><a href={`https://torre.ai/${user.username}`} target="_blank">{user.name}</a></li>
             ))}
           </ul>
         </div>
+          </div>
+        </div>
+        
+        
       </header>
     </div>
   );

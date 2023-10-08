@@ -14,7 +14,7 @@ const SearchBar = ({ onSearch, onAddToFavorites }) => {
           query,
           identityType: 'person',
           meta: false,
-          limit: 10,
+          limit: 9,
           excludeContacts: true,
           excludedPeople: []
         },
@@ -25,8 +25,8 @@ const SearchBar = ({ onSearch, onAddToFavorites }) => {
           }
         }
       );
-      onSearch(response.data, query); 
-      setQuery(''); 
+      onSearch(response.data, query);
+      setQuery('');
     } catch (error) {
       console.error('Error fetching user data:', error);
     }
