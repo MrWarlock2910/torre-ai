@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+
+/*Searchbar*/
+.search-bar {
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+  overflow: hidden;
+  background-color: #f0f0f0;
+  padding: 4px;
+}
+
+.search-bar .MuiInputBase-root {
+  border-radius: 50px;
+  background-color: white;
+  padding: 4px 12px;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar .MuiInputBase-root:hover {
+  background-color: #e0e0e0;
+}
+
+
+
